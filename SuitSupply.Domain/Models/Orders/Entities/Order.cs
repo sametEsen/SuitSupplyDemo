@@ -19,8 +19,6 @@ public class Order : IAggregateRoot
 	public void MarkAsPaid()
 	{
 		IsPaid = true;
-
-		AzureServiceBusPublisher.PublishOrderPaidEvent(Id);
 	}
 
 	public void MarkAsStarted()
@@ -31,8 +29,6 @@ public class Order : IAggregateRoot
 		}
 
 		IsStarted = true;
-
-		AzureServiceBusPublisher.PublishStartAlterationEvent(Id);
 	}
 
 	public void MarkAsFinished()
@@ -48,8 +44,6 @@ public class Order : IAggregateRoot
 		}
 
 		IsStarted = false;
-
-		AzureServiceBusPublisher.PublishFinishAlterationEvent(Id);
 
 	}
 

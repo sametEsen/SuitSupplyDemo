@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using SuitSupply.Application.Services.Abstract;
 using SuitSupply.Application.Services.Concrete;
 using SuitSupply.Domain.Common.Interfaces;
+using SuitSupply.Domain.EventPublishers;
 using SuitSupply.Infrastructure.Contexts;
 using SuitSupply.Infrastructure.MappingProfiles;
 using SuitSupply.Infrastructure.Repositories;
@@ -28,6 +29,7 @@ builder.Services.AddScoped<IAlterationFormRepository, AlterationFormRepository>(
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+builder.Services.AddScoped<IAzureServiceBusPublisher, AzureServiceBusPublisher>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAlterationService, AlterationService>();
 var app = builder.Build();

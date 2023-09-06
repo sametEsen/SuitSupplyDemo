@@ -20,4 +20,4 @@ public class Suit : IAggregateRoot
 	{
 		return new AlterationForm(this, instructions);
     }
-};
+}

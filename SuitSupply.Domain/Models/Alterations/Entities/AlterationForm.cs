@@ -22,8 +22,6 @@ public class AlterationForm : IAggregateRoot
 	{
 		var order = new Order(this);
 
-		AzureServiceBusPublisher.PublishOrderCreatedEvent(Id);
-
 		return order;
 	}
 }

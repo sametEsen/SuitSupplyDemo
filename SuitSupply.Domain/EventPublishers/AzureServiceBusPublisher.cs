@@ -3,10 +3,10 @@ using SuitSupply.Domain.EventPublishers.Models;
 
 namespace SuitSupply.Domain.EventPublishers
 {
-	public class AzureServiceBusPublisher
+	public class AzureServiceBusPublisher : IAzureServiceBusPublisher
 	{
-		private readonly static string serviceBusConnectionString = "<YourConnectionString>";
-		public static void PublishOrderCreatedEvent(int orderId)
+		private readonly string serviceBusConnectionString = "<YourConnectionString>";
+		public void PublishOrderCreatedEvent(int orderId)
 		{
 			PublishEvent(new EventModel
 			{
@@ -15,7 +15,7 @@ namespace SuitSupply.Domain.EventPublishers
 			}).GetAwaiter().GetResult();
 		}
 
-		public static void PublishOrderPaidEvent(int orderId)
+		public void PublishOrderPaidEvent(int orderId)
 		{
 			PublishEvent(new EventModel
 			{
@@ -24,7 +24,7 @@ namespace SuitSupply.Domain.EventPublishers
 			}).GetAwaiter().GetResult();
 		}
 
-		public static void PublishStartAlterationEvent(int orderId)
+		public void PublishStartAlterationEvent(int orderId)
 		{
 			PublishEvent(new EventModel
 			{
@@ -33,7 +33,7 @@ namespace SuitSupply.Domain.EventPublishers
 			}).GetAwaiter().GetResult();
 		}
 
-		public static void PublishFinishAlterationEvent(int orderId)
+		public void PublishFinishAlterationEvent(int orderId)
 		{
 			PublishEvent(new EventModel
 			{
@@ -42,7 +42,7 @@ namespace SuitSupply.Domain.EventPublishers
 			}).GetAwaiter().GetResult();
 		}
 
-		private static async Task PublishEvent(EventModel eventModel)
+		private async Task PublishEvent(EventModel eventModel)
 		{
 			await using (var client = new ServiceBusClient(serviceBusConnectionString))
 			{
