@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using SuitSupply.Application.Services.Abstract;
-using SuitSupply.Domain.Models.Alterations.Entities;
-using SuitSupply.Infrastructure.Repositories;
 
 namespace SuitSupply.Api.Controllers
 {
@@ -30,6 +29,13 @@ namespace SuitSupply.Api.Controllers
 			var alterationForm = await _alterationService.GetAlterationForm(alterationFormId);
 			await _orderService.CreateOrder(alterationForm);
 			return Ok();
+		}
+
+		[HttpGet("~/GetOrder/{orderIdId}")]
+		public IActionResult GetOrder(int orderId)
+		{
+			var order = _orderService.GetOrderById(orderId);
+			return Ok(order);
 		}
 
 		[HttpPost]

@@ -9,10 +9,12 @@ namespace SuitSupply.Api.Controllers
 	[Route("api/[controller]")]
 	public class AlterationController : ControllerBase
 	{
+		private readonly ILogger<AlterationController> _logger;
 		private readonly IAlterationService _alterationService;
 
-		public AlterationController(IAlterationService alterationService)
+		public AlterationController(ILogger<AlterationController> logger, IAlterationService alterationService)
 		{
+			_logger = logger;
 			_alterationService = alterationService;
 		}
 
@@ -32,7 +34,8 @@ namespace SuitSupply.Api.Controllers
 			}
 			catch (Exception ex)
 			{
-				return BadRequest(ex.Message);
+				_logger.LogError(ex.Message, ex);
+				return BadRequest(ex.InnerException == null ? ex.Message : ex.InnerException.Message);
 			}
 		}
 	}

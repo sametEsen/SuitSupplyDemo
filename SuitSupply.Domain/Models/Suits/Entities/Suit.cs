@@ -9,7 +9,7 @@ public class Suit : IAggregateRoot
 {
 	public int Id { get; protected set; }
     public SuitType Type { get; private set; }
-	//public Suit() { }
+	public Suit() { }
 
 	public Suit(SuitType type)
     {

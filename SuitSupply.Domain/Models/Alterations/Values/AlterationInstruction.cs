@@ -7,7 +7,7 @@ public class AlterationInstruction
     public AlterationType Type { get; private set; }
     public string Description { get; private set; }
     public float Measurement { get; private set; }
-	//public AlterationInstruction() { }
+	public AlterationInstruction() { }
 
 	public AlterationInstruction(AlterationType type, string description, float measurement)
     {

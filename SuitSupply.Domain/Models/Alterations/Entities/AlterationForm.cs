@@ -11,7 +11,7 @@ public class AlterationForm : IAggregateRoot
 	public int Id { get; protected set; }
 	public Suit Suit { get; private set; }
 	public List<AlterationInstruction> AlterationInstructions { get; private set; }
-	//public AlterationForm() { }
+	public AlterationForm() { }
 	public AlterationForm(Suit suit, List<AlterationInstruction> alterationInstructions)
     {
         Suit = suit;

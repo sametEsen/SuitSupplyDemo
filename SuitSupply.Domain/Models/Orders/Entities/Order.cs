@@ -10,8 +10,7 @@ public class Order : IAggregateRoot
 	public AlterationForm Form { get; private set; }
 	public bool IsPaid { get; set; } = false;
 	public bool IsStarted { get; set; } = false;
-
-	//public Order() { }
+	public Order() { }
 	public Order(AlterationForm alterationForm)
 	{
 		Form = alterationForm;

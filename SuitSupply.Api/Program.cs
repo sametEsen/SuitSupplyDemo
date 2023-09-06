@@ -3,6 +3,7 @@ using SuitSupply.Application.Services.Abstract;
 using SuitSupply.Application.Services.Concrete;
 using SuitSupply.Domain.Common.Interfaces;
 using SuitSupply.Infrastructure.Contexts;
+using SuitSupply.Infrastructure.MappingProfiles;
 using SuitSupply.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,12 @@ builder.Services.AddDbContext<SuitSupplyDbContext>(
 		//options => options.UseSqlServer("DB CONNECTION SHOULD BE PUT HERE")
 		options => options.UseInMemoryDatabase("InMemoryDb")
 );
+builder.Services.AddAutoMapper(
+	typeof(SuitMappingProfile), 
+	typeof(OrderMappingProfile),
+	typeof(AlterationFormMappingProfile),
+	typeof(AlterationInstructionMappingProfile)
+	);
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ISuitRepository, SuitRepository>();
 builder.Services.AddScoped<IAlterationFormRepository, AlterationFormRepository>();
