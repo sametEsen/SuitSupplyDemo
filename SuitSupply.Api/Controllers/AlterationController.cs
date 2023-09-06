@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SuitSupply.Application.Services.Abstract;
-using SuitSupply.Domain.Models.Alterations.Values;
 using SuitSupply.Domain.ViewModels;
 
 namespace SuitSupply.Api.Controllers

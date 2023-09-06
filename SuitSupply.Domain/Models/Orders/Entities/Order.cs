@@ -1,5 +1,4 @@
 ﻿using SuitSupply.Domain.Common.Interfaces;
-using SuitSupply.Domain.EventPublishers;
 using SuitSupply.Domain.Models.Alterations.Entities;
 
 namespace SuitSupply.Domain.Models.Orders.Entities;

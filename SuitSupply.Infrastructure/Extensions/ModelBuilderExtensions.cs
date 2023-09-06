@@ -3,7 +3,6 @@ using SuitSupply.Domain.Models.Alterations.Entities;
 using SuitSupply.Domain.Models.Alterations.Values;
 using SuitSupply.Domain.Models.Orders.Entities;
 using SuitSupply.Domain.Models.Suits.Entities;
-using SuitSupply.Domain.Models.Suits.Enums;
 
 namespace SuitSupply.Infrastructure.Extensions;
 

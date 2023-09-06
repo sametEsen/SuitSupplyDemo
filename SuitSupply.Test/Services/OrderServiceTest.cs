@@ -2,7 +2,6 @@
 using SuitSupply.Application.Services.Abstract;
 using SuitSupply.Application.Services.Concrete;
 using SuitSupply.Domain.Common.Interfaces;
-using SuitSupply.Domain.DataTransfer.Entities;
 using SuitSupply.Domain.EventPublishers;
 using SuitSupply.Domain.Models.Alterations.Entities;
 using SuitSupply.Domain.Models.Alterations.Values;

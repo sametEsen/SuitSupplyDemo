@@ -8,7 +8,7 @@ using SuitSupply.Infrastructure.Repositories;
 
 namespace SuitSupply.Test.Services
 {
-    public class AlterationServiceTest
+	public class AlterationServiceTest
 	{
         private Mock<IMapper> _mapperMock;
         private SuitSupplyDbContext _dbContextMock;
