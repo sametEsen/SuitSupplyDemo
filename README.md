@@ -6,8 +6,8 @@
 To set up this project, you need to clone the git repo
 
 ```sh
-$ git clone https://github.com/sametEsen/SuitSupply.git
-$ cd SuitSupply
+$ git clone https://github.com/sametEsen/SuitSupplyDemo.git
+$ cd SuitSupplyDemo
 ```
 
 followed by
